@@ -9,10 +9,9 @@
 #ifndef UART_H_
 #define UART_H_
 
-#include "MEMMAP.h"
-#include "Standard_Type.h"
-#include "Utlise.h"
-#include "LCD.h"
+#include "memmap.h"
+#include "utlise.h"
+#include "standard_type.h"
 
 #define F8MHZ   8
 #define F4MHZ   4
