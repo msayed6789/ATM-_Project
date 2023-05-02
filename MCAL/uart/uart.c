@@ -2,7 +2,7 @@
  * uart.c
  *
  * Created: 4/29/2023 2:24:40 AM
- *  Author: AIO
+ *  Author: Mohamed Sayed
  */ 
  #include "uart.h"
 
