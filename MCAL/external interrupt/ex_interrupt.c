@@ -6,7 +6,7 @@
  */ 
 
 
-#include "EX_Interrupt.h"
+#include "ex_interrupt.h"
 
 /***************************Pointer to function for ISr************/
 static void (*pf_INT0)(void)=NULLPTR;
