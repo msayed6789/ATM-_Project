@@ -9,12 +9,10 @@
 #ifndef TIMER_H_
 #define TIMER_H_
 
-//#include "memmap.h"
-//#include "utlise.h"
-//#include "standard_type.h"
-#include "MEMMAP.h"
-#include "Standard_Type.h"
-#include "Utlise.h"
+#include "memmap.h"
+#include "utlise.h"
+#include "standard_type.h"
+
 
 #define normal 0x00
 #define no_clk 0x00
