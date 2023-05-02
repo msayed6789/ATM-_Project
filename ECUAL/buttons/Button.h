@@ -9,10 +9,8 @@
 #ifndef BUTTON_H_
 #define BUTTON_H_
 
-#include "DIO_Interface.h"
+#include "dio.h"
 #include "timer.h"
-
-//#include "dio.h"
 
 #define  Time_Test  2      //Time in sec
 /*******************************************************************************/
