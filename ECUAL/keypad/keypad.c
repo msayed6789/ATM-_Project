@@ -69,3 +69,18 @@ u8 KEYPAD_GetNum_time(u32 timeout) //timeout is time in sec
 	}
 	return key;
 }
+
+u8 KEYPAD_GetNum(void)
+{
+	u8 key=NO_KEY;
+	u8 num=0;
+	while(1)
+	{
+		key=KEYPAD_GetKey();
+		if(key!=NO_KEY)
+		{
+			num=key-'0';
+			return num;
+		}
+	}
+}
