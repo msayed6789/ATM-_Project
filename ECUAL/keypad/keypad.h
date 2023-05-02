@@ -36,6 +36,7 @@ Keypad_Status_en KEYPAD_Init(PIn_name First_Output,PIn_name Firs_Input);
 
 u8 KEYPAD_GetNum_time(u32 timeout); //timeout is time in sec
 
+u8 KEYPAD_GetNum(void); 
 
 
 
