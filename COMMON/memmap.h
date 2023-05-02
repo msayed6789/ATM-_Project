@@ -49,6 +49,30 @@
 #define TOIE0 0 //overflow enable bit
 #define TIFR    (*(volatile unsigned char*)(0x58))
 
+/****************************************************************************************************/
+
+/*TIMER 1*/
+
+
+#define ICR1         (*(volatile unsigned short*)0x46)
+#define ICR1L     (*(volatile unsigned char*)0x46)
+#define ICR1H     (*(volatile unsigned char*)0x47)
+#define OCR1B     (*(volatile unsigned short*)0x48)
+#define OCR1BL    (*(volatile unsigned char*)0x48)
+#define OCR1BH       (*(volatile unsigned char*)0x49)
+#define OCR1A     (*(volatile unsigned short*)0x4A)
+#define OCR1AL    (*(volatile unsigned char*)0x4A)
+#define OCR1AH      (*(volatile unsigned char*)0x4B)
+#define TCNT1       (*(volatile unsigned short*)0x4C)
+#define TCNT1L    (*(volatile unsigned char*)0x4C)
+#define TCNT1H    (*(volatile unsigned char*)0x4D)
+#define TCCR1B       (*(volatile unsigned char*)0x4E)
+#define TCCR1A        (*(volatile unsigned char*)0x4F)
+
+#define SFIOR       (*(volatile unsigned char*)0x50)
+
+#define OSCCAL       (*(volatile unsigned char*)0x51)
+
 // Timer2 Registers
 /******************************************************************************/
 #define TCNT2   (*(volatile unsigned char*)(0x44))
