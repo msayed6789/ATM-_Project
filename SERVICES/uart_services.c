@@ -130,25 +130,6 @@ static void uart_transmitNumberCallBack(void)
 	}
 }
 
-void uart_transmitStringCheckSum(u8*str)
-{
-	u8 i=0;
-	u16 sum=0;
-	u8 length=0;
-	while (str[length])
-	{
-		length++;
-	}
-	uart_transmit(length);
-	for (i=0;i<length;i++)
-	{
-		uart_transmit(str[i]);
-		sum=sum+str[i];
-	}
-	uart_transmit((u8)sum);
-	uart_transmit((u8)(sum>>8));
-}
-
 /*******************************************************Receiver*********************************************************************************************/
 void uart_recieverString(u8*str)
 {
@@ -289,35 +270,5 @@ static void uart_recieverNumberCallBack(void)
 	else
 	{
 		i++;
-	}
-}
-
-u8 uart_recieveStringCheckSum(u8*str)
-{
-	u8 length=0;
-	u8 i=0;
-	u16 sum_Calc=0;
-	u16 sum_Rec=0;
-	length=uart_reciever();
-	for (i=0;i<length;i++)
-	{
-		str[i]=uart_reciever();
-		sum_Calc=sum_Calc+str[i];
-	}
-	str[i]=NULL;
-	sum_Rec=(u16)uart_reciever()|(u16)(uart_reciever()<<8);
-	LCD_GoTo(0,7);
-	LCD_WriteNumber(sum_Calc);
-	LCD_WriteChar('-');
-	LCD_WriteNumber(sum_Rec);
-	LCD_WriteChar('-');
-	LCD_WriteNumber(length);
-	if (sum_Calc==sum_Rec)
-	{
-		return DATA_DONE;
-	}
-	else
-	{
-		return ERROR_DATA;
 	}
 }
