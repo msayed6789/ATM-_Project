@@ -139,22 +139,25 @@
 	 UDR=data;
  }
  
- 
+ void uart_transmitNoBlock(u8 data)
+ {
+	 UDR=data;
+ }
  /**************************************************Transmitter Interrupt********************************************************************************************/
  void uart_transmitComPlete_InterruptEnable(void)
  {
-	 Set_Bit(UCSRB,UDRIE);
+	 Set_Bit(UCSRB,TXCIE);
  }
  void uart_transmitComPlete_InterruptDisable(void)
  {
-	  CLR_Bit(UCSRB,UDRIE);
+	  CLR_Bit(UCSRB,TXCIE);
  }
  void uart_transmitComPlete_InterruptSetCallback(void(*fptr)(void))
  {
 	 Tfptr=fptr;
  }
  
- ISR(UART_UDRE_vect)
+ ISR(UART_TX_vect)
  {
 	 if (Tfptr!=NULLPTR)
 	 {
@@ -186,7 +189,10 @@
 	 
  }
  
- 
+ u8 uart_recieverNoBlock(void)
+ {
+	  return UDR;
+ }
  /*******************************************Receiver Interrupt*****************************************************************************/
  
  void uart_recieveComPlete_InterruptEnable(void)
