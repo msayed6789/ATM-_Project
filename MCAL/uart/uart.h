@@ -70,6 +70,7 @@ typedef enum{
 void uart_init(Uart_BaudRate_en BaudRate,Uart_Speed_en Speed,Uart_Mode_en mode,Uart_Parity_en parity,Uart_StopBit_en stopbit,Uart_DataBit_en databit,Uart_Enable_en enable);
 /*******************************************************Transmitter************************************************************************************************/
 void uart_transmit(u8 data);
+void uart_transmitNoBlock(u8 data);
 /**************************************************Transmitter Interrupt********************************************************************************************/
 void uart_transmitComPlete_InterruptEnable(void);
 void uart_transmitComPlete_InterruptDisable(void);
@@ -77,6 +78,7 @@ void uart_transmitComPlete_InterruptSetCallback(void(*fptr)(void));
 
 /*******************************************************Receiver*********************************************************************************************/
 u8 uart_reciever(void);
+u8 uart_recieverNoBlock(void);
 /*******************************************Receiver Interrupt***********************************************************************************************/
 void uart_recieveComPlete_InterruptEnable(void);
 void uart_recieveComPlete_InterruptDisable(void);
