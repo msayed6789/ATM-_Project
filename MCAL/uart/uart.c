@@ -178,10 +178,6 @@
 	 {
 		 return ERROR_DATA;
 	 }
-	 else if (Read_Bit(UCSRA,DOR))
-	 {
-		 return DATA_OVERRUN;
-	 }
 	 else
 	 {
 		 return UDR;
