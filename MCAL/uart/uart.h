@@ -19,7 +19,6 @@
 #define FCPU   F8MHZ                         //The CPU Frequency in MHz
  
 #define ERROR_DATA         'E'
-#define DATA_OVERRUN       'O'
 #define DATA_DONE          'D'
 
 
