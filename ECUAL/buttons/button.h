@@ -21,7 +21,8 @@ typedef enum{
 
 typedef enum{
 	Pressed_UnderTime=2,
-	Pressed_OverTime=4
+	Pressed_OverTime=4,
+	NO_PRESSED
 }Button_Status_Time;
 
 void button_init(PIn_name pin);
