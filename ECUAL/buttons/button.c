@@ -30,7 +30,7 @@ void button_init(PIn_name Buttonpin)
  
  Button_Status_Time Button_Check_Time(u8 Button)
  {
-	 u8 status=0;
+	 u8 status=NO_PRESSED;
 	 if(DIO_ReadPin(Button)==0)
 	 {
 		 Timer1_OCA_SetCallBack(Time_Count);
