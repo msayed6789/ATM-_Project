@@ -51,7 +51,38 @@
 
 /****************************************************************************************************/
 
+
+/*******************************************************************************************************/
+//interrupt
+
+#define INT0		6
+#define INT1		7
+#define	INT2		5
+#define ISC00		0
+#define ISC01		1
+#define ISC10		2
+#define ISC11		3
+#define ISC2		6
+
+#define GICR	(*(volatile unsigned char *)(0x5B))
+
+#define MCUCR	(*(volatile unsigned char *)(0x55))
+
+#define MCUCSR	(*(volatile unsigned char *)(0x54))
+
+
+
+
+
+
 /*TIMER 1*/
+
+#define WGM10		0
+#define WGM11		1
+#define WGM12		3
+#define WGM13		4
+#define OCIE1A		4
+
 
 
 #define ICR1         (*(volatile unsigned short*)0x46)
@@ -72,6 +103,8 @@
 #define SFIOR       (*(volatile unsigned char*)0x50)
 
 #define OSCCAL       (*(volatile unsigned char*)0x51)
+
+//#define TCCR1A		(*(volatile unsigned char*)0x4F)
 
 // Timer2 Registers
 /******************************************************************************/
@@ -158,6 +191,23 @@ void vector (void) __attribute__ ((signal))__VA_ARGS__ ; \
 void vector (void)
 # define sei()  __asm__ __volatile__ ("sei" ::)
 # define cli()  __asm__ __volatile__ ("cli" ::)
+
+
+
+
+/*******************************************************************************************/
+
+// SPI
+
+
+#define SPCR  (*(volatile unsigned char *)0x2D)
+#define SPSR  (*(volatile unsigned char *)0x2E)
+#define SPDR  (*(volatile unsigned char *)0x2F)
+
+
+
+
+
 
 
 #endif /* MEMMAP_H_ */
