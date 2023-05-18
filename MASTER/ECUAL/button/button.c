@@ -13,6 +13,7 @@ u16 Time_OVF = (u32)(Time_Test*1000000)/(50000*8);
 void button_init(PIn_name Buttonpin)
 {
 	DIO_InitPin ( Buttonpin , INPUT );
+	DIO_WRitePin(Buttonpin , LOW);
 }
 
  Button_Status Button_Check(u8 Button)
@@ -30,14 +31,15 @@ void button_init(PIn_name Buttonpin)
  
  Button_Status_Time Button_Check_Time(u8 Button)
  {
-	 u8 status=NO_PRESSED;
-	 if(DIO_ReadPin(Button)==0)
+	  u8 status=0;
+	 
+	 if(DIO_ReadPin(Button)==1)
 	 {
 		 Timer1_OCA_SetCallBack(Time_Count);
 		 Timer1_OCA_InterruptEnable();
 		 Timer1_Init(TIMER1_CTC_OCRA_TOP_MODE,TIMER1_SCALER_64);
 		 OCR1A=49999;
-		 while (!DIO_ReadPin(Button));
+		 while (DIO_ReadPin(Button));
 		 Timer_1Stop();
 		 if (count>=Time_OVF)
 		 {
